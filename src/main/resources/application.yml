@@ -1,0 +1,36 @@
+server:
+  port: 8808
+
+spring: 
+  datasource:
+    url: jdbc:postgresql://10.41.241.111:31783/autoiv_qas
+    username: wzsaifile
+    password: aifile
+    driver-class-name: org.postgresql.Driver
+    
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: postgresql
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    serialization: 
+      write-date-keys-as-timestamps: false
+      
+  thymeleaf:
+    prefix: classpath:/templates/
+  
+  redis:
+    host: localhost
+    port: 6379
+    jedis:
+      pool:
+        max-wait: 30000  #連接池最大阻塞等待時間
+        max-active: 100  #連接池最大連接數
+        max-idle: 20     #連接池最大空閑連接數
+        min-idle: 0      #連接池最小空閑連接數
+    timeout: 3000        #連接超時
+          
+   
